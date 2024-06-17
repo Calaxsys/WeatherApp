@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Weather App</title>
+    <script defer="defer" src="main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7831bd6131.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-stone-700 flex flex-col h-screen">
+    <header class="flex-none flex bg-black p-5 justify-center">
+      <i
+        class="fa-solid fa-cloud-sun fa-2xl self-center pr-4"
+        style="color: #ffffff"
+      ></i>
+      <h1 class="text-4xl text-white">Weather App</h1>
+    </header>
+    <div
+      class="bg-cyan-500 text-white text-left w-auto grow flex justify-around"
+    >
+      <div id="weather-display" class="content-center">
+        <h2 id="location-title-display" class="text-4xl">
+          Miami, United States
+        </h2>
+        <p id="local-date-time" class="mt-4 text-center">
+          6/16/2024, 5:43:12 PM
+        </p>
+        <p id="temp-display" class="text-4xl mt-4 text-center">50°F</p>
+        <div id="feels-like" class="inline-block mt-4 ml-6">Feels Like: 90</div>
+        <div id="humidity" class="inline-block ml-4">Humidity level: 18%</div>
+        <p id="wind-speed" class="mt-4 text-center">Wind Speed: 1.54 km/h</p>
+      </div>
+      <div id="search-area" class="content-center">
+        <form action="" class="flex flex-col">
+          <input id="search-input" />
+          <button type="submit" id="search-input-btn">Get the Weather</button>
+        </form>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
