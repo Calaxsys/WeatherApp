@@ -7,29 +7,39 @@ async function getWeather() {
   //Fetch the weather data
   const response = await fetch(URL);
   const data = await response.json();
-  console.log(data);
-  return data;
+  // console.log(data.current);
+  const city = new cityData(
+    data.location.name,
+    data.location.region,
+    data.location.country,
+    data.current.temp_f,
+    data.current.condition.text,
+    data.current.feelslike_f,
+    data.current.wind_mph,
+    data.current.humidity
+  );
+  console.log(city);
 }
 
-function renderData() {
-  class cityData {
-    constructor(
-      locationName,
-      region,
-      temperatureF,
-      weatherCondition,
-      feelsLike,
-      windSpeed,
-      humidity
-    ) {
-      this.locationName = locationName;
-      this.temperatureF = temperatureF;
-      this.weatherCondition = weatherCondition;
-      this.region = region;
-      this.feelslike = feelsLike;
-      this.windspeed = windSpeed;
-      this.humidity = humidity;
-    }
+class cityData {
+  constructor(
+    locationName,
+    region,
+    country,
+    temperatureF,
+    weatherCondition,
+    feelsLike,
+    windSpeed,
+    humidity
+  ) {
+    this.locationName = locationName;
+    this.region = region;
+    this.country = country;
+    this.temperatureF = temperatureF;
+    this.weatherCondition = weatherCondition;
+    this.feelslike = feelsLike;
+    this.windspeed = windSpeed;
+    this.humidity = humidity;
   }
 }
 
