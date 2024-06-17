@@ -29,17 +29,28 @@
           6/16/2024, 5:43:12 PM
         </p>
         <p id="temp-display" class="text-4xl mt-4 text-center">50°F</p>
-        <div id="feels-like" class="inline-block mt-4 ml-6">Feels Like: 90</div>
+        <div id="feels-like" class="inline-block mt-4 ml-6">
+          Feels Like: 90°F
+        </div>
         <div id="humidity" class="inline-block ml-4">Humidity level: 18%</div>
         <p id="wind-speed" class="mt-4 text-center">Wind Speed: 1.54 km/h</p>
       </div>
       <div id="search-area" class="content-center">
         <form action="" class="flex flex-col">
-          <input id="search-input" />
-          <button type="submit" id="search-input-btn">Get the Weather</button>
+          <input
+            id="search-input"
+            placeholder="Search by city"
+            class="p-2 border-solid border-zinc-600 border-2 mb-3"
+          />
+          <button
+            type="submit"
+            id="search-input-btn"
+            class="p-2 bg-emerald-300 text-black rounded-xl hover:bg-emerald-500 hover:text-white"
+          >
+            Get the Weather
+          </button>
         </form>
       </div>
     </div>
-    <script src="main.js"></script>
   </body>
 </html>
