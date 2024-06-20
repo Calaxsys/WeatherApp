@@ -1,3 +1,4 @@
-import { getWeather } from "./fetchWeather";
 import "./styles.css";
-getWeather();
+import { initializeDefaultSearch } from "./fetchWeather";
+
+window.onload = initializeDefaultSearch;
