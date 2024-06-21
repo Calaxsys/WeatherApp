@@ -1,1 +1,0 @@
-import { searchWeather } from "./fetchWeather";
