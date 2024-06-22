@@ -1,4 +1,4 @@
 import "./styles.css";
-import { getWeather } from "./fetchWeather";
+import { processRequiredData } from "./fetchWeather";
 
-getWeather("New York");
+processRequiredData("Charlotte");
