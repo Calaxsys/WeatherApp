@@ -1,4 +1,5 @@
 import { API_KEY } from "./key";
+import { parse, format } from "date-fns";
 const BASE_URL = "http://api.weatherapi.com/v1/current.json";
 
 async function getWeather(location) {
@@ -17,6 +18,10 @@ async function getWeather(location) {
   }
 }
 
+function formatDate(dateString) {
+  const date = parse(dateString, "yyyy-MM-dd HH:mm", new Date());
+  return format(date, "MM/dd/yyyy HH:mm");
+}
 async function processRequiredData(location) {
   try {
     const { locationData } = await getWeather(location);
@@ -26,7 +31,7 @@ async function processRequiredData(location) {
       name: locationData.location.name,
       country: locationData.location.country,
       region: locationData.location.region,
-      localTime: locationData.location.localtime,
+      localTime: formatDate(locationData.location.localtime),
       condition: locationData.current.condition.text,
       tempF: locationData.current.temp_f,
       tempC: locationData.current.temp_c,
