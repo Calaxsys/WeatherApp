@@ -10,7 +10,7 @@ async function getWeather(location) {
     }
     const locationData = await response.json();
     // console.log(locationData);
-    return { location, locationData }; //Return the location and its data
+    return { locationData };
   } catch (error) {
     console.error("There has been a problem fetching data", error);
     throw error;
@@ -36,6 +36,7 @@ async function processRequiredData(location) {
       windSpeedMPH: locationData.current.wind_mph,
     };
     console.log(processedData);
+    return processedData;
   } catch (error) {
     console.error("There has been a problem processing the data:", error);
     throw error;
