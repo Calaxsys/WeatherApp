@@ -25,7 +25,7 @@ async function updateWeatherDisplay(location) {
   try {
     const response = await processRequiredData(location);
 
-    locationTitleDisplay.textContent = `${response.name}, ${response.region} ${response.country}`;
+    locationTitleDisplay.textContent = `${response.name}, ${response.region}, ${response.country}`;
     localDateTimeDisplay.textContent = response.localTime;
     tempDisplay.textContent = `${response.tempF}°F`;
     feelsLikeDisplay.textContent = `Feels Like: ${response.feelsLikeF}`;
